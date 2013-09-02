@@ -3,5 +3,5 @@
 
   var Screenshot = require('../').Screenshot;
 
-  new Screenshot(["http://leanin.org", "http://leanin.org/about/"]);
+  new Screenshot(["http://leanin.org", "http://leanin.org/news-inspiration/"]);
 })();
