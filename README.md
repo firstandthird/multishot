@@ -4,6 +4,16 @@
 
 ## Getting Started
 
+### Dependicies
+
+```shell
+brew install pkg-config
+brew install imagemagick
+brew install webkit2png
+```
+
+### Install
+
 ```shell
 npm install multishot --save-dev
 ```
