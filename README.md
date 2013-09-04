@@ -10,6 +10,7 @@
 brew install pkg-config
 brew install imagemagick
 brew install webkit2png
+npm install -g node-gyp
 ```
 
 ### Install
