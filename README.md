@@ -10,6 +10,7 @@
 brew install pkg-config
 brew install imagemagick
 brew install webkit2png
+brew install ghostscript
 npm install -g node-gyp
 ```
 
@@ -17,6 +18,10 @@ npm install -g node-gyp
 
 ```shell
 npm install multishot --save-dev
+```
+
+```shell
+npm install multishot -g
 ```
 
 ## The CLI
