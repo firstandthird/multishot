@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-### Dependicies
+### Dependencies
 
 ```shell
 brew install pkg-config
