@@ -90,3 +90,18 @@ A path to render the final composed image. Will be created if it doesn't exist.
 
 #### temp
 Temp path where screenshots will be taken. Will be created and truncated each run so be careful when setting. Default: /tmp/multishot/
+
+#### backgroundColor
+Hex color for main background. Default: #ecf0f1
+
+#### labelBackgroundColor
+Hex color for label (tab) background. Default: #ffffff
+
+#### labelTextColor
+Hex color for label text. Default: #232323
+
+#### labelFont
+Valid font for use in imagemagick. Default: Helvetica-Bold
+
+#### labelFontSize
+Label font size. Default: 18
