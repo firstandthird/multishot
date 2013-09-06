@@ -3,5 +3,29 @@
 
   var Screenshot = require('../').Screenshot;
 
-  new Screenshot(["http://leanin.org", "http://leanin.org/news-inspiration/"]);
+  var urls = [
+    {
+      group: 'Circles',
+      url: 'http://leanin.org/circles/'
+    },
+    {
+      group: 'Circles',
+      url: 'http://leanin.org/circle-login/'
+    },
+    {
+      group: 'Circles',
+      url: 'http://leanin.org/circle-faqs/'
+    },
+    'http://leanin.org',
+    {
+      url: 'http://leanin.org/team/'
+    },
+
+    {
+      group: 'News+Inspiration',
+      url: 'http://leanin.org/news-inspiration/'
+    },
+  ];
+
+  new Screenshot(urls);
 })();

@@ -55,6 +55,30 @@ multishot -u http://google.com -o ~/Desktop
 ```js
 var Screenshot = require('multishot').Screenshot;
 
+var urls = [
+    {
+      group: 'Circles',
+      url: 'http://leanin.org/circles/'
+    },
+    {
+      group: 'Circles',
+      url: 'http://leanin.org/circle-login/'
+    },
+    {
+      group: 'Circles',
+      url: 'http://leanin.org/circle-faqs/'
+    },
+    'http://leanin.org',
+    {
+      url: 'http://leanin.org/team/'
+    },
+
+    {
+      group: 'News+Inspiration',
+      url: 'http://leanin.org/news-inspiration/'
+    },
+  ];
+
 var shot = new Screenshot(urls, options);
 
 shot.on('progress', function() {
