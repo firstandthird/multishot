@@ -48,6 +48,13 @@ multishot -f example/urls.txt -o ~/Desktop
 multishot -u http://google.com -o ~/Desktop
 ```
 
+#### Text file input
+
+The text file must contain one url per line. Blank lines are permitted for formatting. You may optionally group urls by 
+putting a group name on its own line. Note: group names cannot contain http.
+
+See example/urls.txt for an example
+
 ## The API
 
 ### Usage

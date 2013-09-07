@@ -4,7 +4,6 @@ var fs = require('fs');
 var version = JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version;
 var Screenshot = require('../').Screenshot;
 var optimist = require('optimist');
-var ProgressBar = require('progress');
 
 var argv = optimist
     .usage('multishot '+version+'\nUsage: $0 [opts]')
@@ -22,7 +21,9 @@ if(argv.h || argv.help) {
 }
 
 var urls = [];
+var grouped = [];
 var options = {};
+var lastGroup = 'Default';
 
 if(argv.u) {
   urls = argv.u;
@@ -38,23 +39,27 @@ if(argv.u) {
   }
 
   urls = urls.split('\n');
-}
 
-var bar = new ProgressBar(' Rendering images [:bar] :percent :etas', {
-  complete: '=',
-  incomplete: ' ',
-  width: 50,
-  total: urls.length + 1
-});
+  for(var i = 0, c = urls.length; i < c; i++) {
+    if(!urls[i].length) continue;
+
+    if(urls[i].indexOf('http') === -1) {
+      lastGroup = urls[i];
+      continue;
+    }
+
+    grouped.push({
+      group: lastGroup,
+      url: urls[i]
+    });
+  }
+}
 
 options.output = argv.o;
 options.temp = argv.t;
 
-var shot = new Screenshot(urls, options);
-
-shot.on('progress', function() {
-  bar.tick();
-});
+console.log('Capturing screenshots. This might take a while.');
+var shot = new Screenshot(grouped, options);
 
 shot.on('complete', function(file) {
   console.log(' ');

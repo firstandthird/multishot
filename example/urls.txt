@@ -1,3 +1,7 @@
 http://leanin.org
-http://leanin.org/news-inspiration/
+
+Homepage
 http://leanin.org/about/
+
+News+Inspiration
+http://leanin.org/news-inspiration/
