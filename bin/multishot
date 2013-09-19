@@ -13,6 +13,7 @@ var argv = optimist
     .default('t', '/tmp/multishot/')
     .describe('u', 'List of urls to use')
     .describe('f', 'File containing list of urls (One url per line).')
+    .describe('tpl', 'Template file')
     .argv;
 
 if(argv.h || argv.help) {

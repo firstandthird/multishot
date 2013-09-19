@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<base href="{{base}}">
+
+	<style>
+	body {
+		overflow-x: scroll; 
+    white-space: nowrap;
+	}
+
+	.screenshot-container {
+		display: inline-block;
+	}
+
+	.url {
+		font-weight: bold;
+	}
+
+	.screenshot {
+		display: block;
+	}
+	</style>
+</head>	
+<body>
+	{{#each grouped}}
+	<div>
+	  <h2>{{@key}}</h2>
+	  {{#each this}}
+	  <div class="screenshot-container">
+	  	<div class="url">{{this.url}}</div>
+	  	<img src="{{this.group}}/{{this.index}}-full.png" class="screenshot">
+	  </div>
+	  {{/each}}
+	 </div>
+	{{/each}}
+</body>
+</html>

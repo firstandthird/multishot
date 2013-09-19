@@ -1,6 +1,5 @@
-http://leanin.org
-
 Homepage
+http://leanin.org
 http://leanin.org/about/
 
 News+Inspiration
