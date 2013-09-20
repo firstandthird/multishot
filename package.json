@@ -1,6 +1,6 @@
 {
   "name": "multishot",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Creates screenshots for pages",
   "main": "index.js",
   "bin": {
