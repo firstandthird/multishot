@@ -5,17 +5,39 @@
 	<base href="{{base}}">
 
 	<style>
+	@import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700");
 	body {
 		overflow-x: scroll; 
     white-space: nowrap;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    color: #7f8c8d;
+    font-size: 12px;
+    line-height: 17px;
+	}
+
+	.group {
+		margin: 40px 0;
 	}
 
 	.screenshot-container {
 		display: inline-block;
 	}
 
+	h2 {
+		font-size: 24px;
+		color: #2C3E50;
+		font-weight: 700;
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+
 	.url {
-		font-weight: bold;
+		font-style: italic;
+	}
+
+	h2, .url {
+		text-rendering: optimizelegibility;
 	}
 
 	.screenshot {
@@ -25,7 +47,7 @@
 </head>	
 <body>
 	{{#each grouped}}
-	<div>
+	<div class="group">
 	  <h2>{{@key}}</h2>
 	  {{#each this}}
 	  <div class="screenshot-container">
