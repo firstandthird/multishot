@@ -6,6 +6,8 @@
 
 ### Dependencies
 
+Currently only works on osx.
+
 ```shell
 brew install webkit2png
 ```
@@ -100,20 +102,66 @@ shot.on('error', function(err) {
 
 ### Events
 
-#### progress
+`progress`  
 Triggered every time an image is rendered and once on complete.
 
-#### complete
+`complete`  
 Triggered once the file image has been generated. Returns the path to composed image.
 
-#### error
+`error`  
 Returns an exception.
 
 
 ### Options
 
-#### output
+`output`  
 A path to render the final composed image. Will be created if it doesn't exist.
 
-#### temp
+`temp`  
 Temp path where screenshots will be taken. Will be created and truncated each run so be careful when setting. Default: /tmp/multishot/
+
+`template`  
+A handlebars HTML file to use as the combined template. See custom template section for more information.
+
+## Custom Templates
+
+Multishot uses a handlebars template to generate the combined image. While the default template is nice, you may want to customize it:
+
+Example:
+```javascript
+var shot = new Screenshot(urls, {
+  template: '/Users/WalterWhite/templates/multishot.html'
+});
+```
+
+The bare minimum your template should have is:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="{{base}}">
+</head> 
+<body>
+  {{#each grouped}}
+  <div class="group">
+    <h2>{{@key}}</h2>
+    {{#each this}}
+    <div class="screenshot-container">
+      <div class="url">{{this.url}}</div>
+      <img src="{{this.group}}/{{this.index}}-full.png" class="screenshot">
+    </div>
+    {{/each}}
+   </div>
+  {{/each}}
+</body>
+</html>
+```
+
+Templates are passed the following variables:
+
+`base`  
+Base path to load images
+
+`grouped`  
+Object containing all grouped images. See example HTML above for usage.
