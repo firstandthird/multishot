@@ -9,31 +9,34 @@
 	body {
 		overflow-x: scroll; 
     white-space: nowrap;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    color: #7f8c8d;
-    font-size: 12px;
-    line-height: 17px;
+    background: {{{styles.background}}};
+    font-family: {{{styles.bodyFontFamily}}};
+    font-weight: {{{styles.bodyFontWeight}}};
+    color: {{{styles.bodyFontColor}}};
+    font-size: {{{styles.bodyFontSize}}};
+    line-height: {{{styles.bodyLineHeight}}};
 	}
 
 	.group {
-		margin: 40px 0;
+		margin: {{{styles.groupMargin}}};
 	}
 
 	.screenshot-container {
 		display: inline-block;
 	}
+		.screenshot-container img {
+			border: {{{styles.screenshotImgBorder}}};
+		}
 
 	h2 {
-		font-size: 24px;
-		color: #2C3E50;
-		font-weight: 700;
-		margin-top: 2px;
-		margin-bottom: 2px;
+		font-size: {{{styles.h2FontSize}}};
+		color: {{{styles.h2FontColor}}};
+		font-weight: {{{styles.h2FontWeight}}};
+		margin: {{{styles.h2Margin}}};
 	}
 
 	.url {
-		font-style: italic;
+		font-style: {{{styles.urlFontStyle}}};
 	}
 
 	h2, .url {
@@ -43,6 +46,10 @@
 	.screenshot {
 		display: block;
 	}
+
+	{{#if styles.custom}}
+		{{{styles.custom}}}
+	{{/if}}
 	</style>
 </head>	
 <body>
@@ -52,7 +59,7 @@
 	  {{#each this}}
 	  <div class="screenshot-container">
 	  	<div class="url">{{this.url}}</div>
-	  	<img src="{{this.group}}/{{this.index}}-full.png" class="screenshot">
+	  	<img src="{{{this.group}}}/{{{this.index}}}-full.png" class="screenshot">
 	  </div>
 	  {{/each}}
 	 </div>
