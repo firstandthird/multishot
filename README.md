@@ -34,6 +34,9 @@ Options:
   -t  Temp directory. Note: This directory will be truncated.  [default: "/tmp/multishot/"]
   -u  List of urls to use
   -f  File containing list of urls (One url per line).
+  -d  Device profile. Sets the user agent and screen width.    [default: "desktop"]
+  -w  Sets viewport width.                                     [default: no max]
+  --tpl Template File
 ```
 
 ### Usage Examples

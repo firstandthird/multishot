@@ -3,6 +3,7 @@
 var fs = require('fs');
 var version = JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version;
 var Screenshot = require('../').Screenshot;
+var Presets = require('../').Presets;
 var optimist = require('optimist');
 
 var argv = optimist
@@ -11,9 +12,12 @@ var argv = optimist
     .demand('o')
     .describe('t', 'Temp directory. Note: This directory will be truncated.')
     .default('t', '/tmp/multishot/')
-    .describe('u', 'List of urls to use')
+    .describe('u', 'List of urls to use.')
     .describe('f', 'File containing list of urls (One url per line).')
-    .describe('tpl', 'Template file')
+    .describe('d', 'Device Profile. Pass with no option to see available presets.')
+    .describe('w', 'Sets viewport width.')
+    .describe('h', 'Sets viewport height.')
+    .describe('tpl', 'Template file.')
     .argv;
 
 if(argv.h || argv.help) {
@@ -25,6 +29,11 @@ var urls = [];
 var grouped = [];
 var options = {};
 var lastGroup = 'Default';
+
+if(argv.d === true) {
+  console.log('Preset devices:', Object.keys(Presets).join(', '));
+  process.exit(1);
+}
 
 if(argv.u) {
   urls = argv.u;

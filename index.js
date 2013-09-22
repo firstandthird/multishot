@@ -7,5 +7,6 @@
 (function(module){
   "use strict";
 
-  module.exports.Screenshot = require('./lib/screenshot-html');
+  module.exports.Screenshot = require('./lib/screenshot');
+  module.exports.Presets = require('./lib/presets');
 })(module);
