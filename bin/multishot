@@ -17,6 +17,7 @@ var argv = optimist
     .describe('d', 'Device Profile. Pass with no option to see available presets.')
     .describe('w', 'Sets viewport width.')
     .describe('h', 'Sets viewport height.')
+    .describe('a', 'Sets user agent.')
     .describe('tpl', 'Template file.')
     .argv;
 
@@ -68,6 +69,12 @@ if(argv.u) {
 
 options.output = argv.o;
 options.temp = argv.t;
+
+if(argv.d && Presets[argv.d]) {
+  for(var pkey in Presets[argv.d]) {
+    options[pkey] = Presets[argv.d][pkey];
+  }
+}
 
 console.log('Capturing screenshots. This might take a while.');
 var shot = new Screenshot(grouped, options);
