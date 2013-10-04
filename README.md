@@ -30,13 +30,15 @@ npm install multishot -g
 Usage: multishot [opts]
 
 Options:
-  -o  Output directory                                         [required]
-  -t  Temp directory. Note: This directory will be truncated.  [default: "/tmp/multishot/"]
-  -u  List of urls to use
-  -f  File containing list of urls (One url per line).
-  -d  Device profile. Sets the user agent and screen width.    [default: "desktop"]
-  -w  Sets viewport width.                                     [default: no max]
-  --tpl Template File
+  -o     Output directory                                        [default: "/Users/troywhiteley"]
+  -t     Temp directory. Note: This directory will be truncated. [default: "/tmp/multishot/"]
+  -u     List of urls to use.
+  -f     File containing list of urls (One url per line).
+  -d     Device Profile. Pass with no option to see available presets.
+  -w     Sets viewport width.
+  -h     Sets viewport height.
+  -a     Sets user agent.
+  --tpl  Template file.
 ```
 
 ### Usage Examples

@@ -69,10 +69,11 @@ if(argv.u) {
 
 options.output = argv.o;
 options.temp = argv.t;
+options.additional = {};
 
 if(argv.d && Presets[argv.d]) {
   for(var pkey in Presets[argv.d]) {
-    options[pkey] = Presets[argv.d][pkey];
+    options.additional[pkey] = Presets[argv.d][pkey];
   }
 }
 
