@@ -20,5 +20,18 @@
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt-contrib-watch": "~0.5.3"
+  },
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/firstandthird/multishot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/firstandthird/multishot/issues"
   }
 }
