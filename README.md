@@ -82,12 +82,20 @@ var urls = [
     {
       url: 'http://leanin.org/team/'
     },
-
     {
       group: 'News+Inspiration',
       url: 'http://leanin.org/news-inspiration/'
     },
   ];
+
+var options = {
+  temp: '/tmp/multishot/',
+  output: '/tmp/multishot/',
+  style: {
+    bodyBackground: 'pink',
+    custom: '.url { text-decoration: underline; }'
+  }
+};
 
 var shot = new Screenshot(urls, options);
 
@@ -170,3 +178,40 @@ Base path to load images
 
 `grouped`  
 Object containing all grouped images. See example HTML above for usage.
+
+`styles`  
+Various different values that a template can use to customize the css. See Styles section for available values.
+
+## Custom Styles
+
+These are the default styles:
+
+| Variable            | Value              |
+| ------------------- | ------------------ |
+| background          | #fff               |
+| bodyFontFamily      | "Lato", sans-serif |
+| bodyFontWeight      | 400                |
+| bodyFontColor       | #7f8c8d            |
+| bodyFontSize        | 12px               |
+| bodyLineHeight      | 17px               |
+| groupMargin         | 40px 0             |
+| screenshotImgBorder | 4px solid #d35400  |
+| h2FontSize          | 24px               |
+| h2FontColor         | #2C3E50            |
+| h2FontWeight        | 700                |
+| h2Margin            | 2px 0              |
+| urlFontStyle        | italic             |
+
+You can override or add new variables by passing them as properties to the `styles` option value.
+
+If you want to pass in a full block of css:
+
+```javascript
+var options = {
+  styles: {
+    custom: '.someSelector{ background: white }'
+  }
+};
+```
+
+The `custom` property can contain any css as long as its valid. If you need any more control you should look into writing a unique template to match your needs.
