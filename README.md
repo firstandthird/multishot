@@ -99,6 +99,10 @@ var options = {
 
 var shot = new Screenshot(urls, options);
 
+shot.on('start', function(){
+  console.log('starting');
+});
+
 shot.on('progress', function() {
   // Update progress bar if you have one
 });
@@ -107,13 +111,18 @@ shot.on('complete', function(file) {
   // do something on complete
 });
 
-shot.on('error', function(err) {
+shot.on('err', function(err) {
   // Something bad happened
 });
+
+shot.start();
 ```
 
 
 ### Events
+
+`start`
+Triggered when start() is called and passes the webkit2png check.
 
 `progress`  
 Triggered every time an image is rendered and once on complete.
@@ -121,8 +130,8 @@ Triggered every time an image is rendered and once on complete.
 `complete`  
 Triggered once the file image has been generated. Returns the path to composed image.
 
-`error`  
-Returns an exception.
+`err`  
+Returns an exception or string.
 
 
 ### Options

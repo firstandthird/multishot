@@ -27,5 +27,7 @@
     },
   ];
 
-  new Screenshot(urls);
+  var shot = new Screenshot(urls);
+
+  shot.start();
 })();
