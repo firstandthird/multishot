@@ -30,7 +30,7 @@ npm install multishot -g
 Usage: multishot [opts]
 
 Options:
-  -o     Output directory                                        [default: "/Users/troywhiteley"]
+  -o     Output directory                                        [default: process.cwd()]
   -t     Temp directory. Note: This directory will be truncated. [default: "/tmp/multishot/"]
   -u     List of urls to use.
   -f     File containing list of urls (One url per line).
