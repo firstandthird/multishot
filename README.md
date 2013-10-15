@@ -34,6 +34,7 @@ Options:
   -t     Temp directory. Note: This directory will be truncated. [default: "/tmp/multishot/"]
   -u     List of urls to use.
   -f     File containing list of urls (One url per line).
+  -p     Prefix for output file.
   -d     Device Profile. Pass with no option to see available presets.
   -w     Sets viewport width.
   -h     Sets viewport height.
@@ -135,6 +136,9 @@ Temp path where screenshots will be taken. Will be created and truncated each ru
 
 `template`  
 A handlebars HTML file to use as the combined template. See custom template section for more information.
+
+`prefix`
+Prefix will be added to the output file. Example: dev-20131015.png
 
 ## Custom Templates
 
