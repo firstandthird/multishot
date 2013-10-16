@@ -1,4 +1,14 @@
 
+0.3.0 / 2013-10-15 
+==================
+
+  * Fixed url undefined error.
+  * Added notes to readme about prefix.
+  * Added prefix support.
+  * Changed the script to require .start() to be called in order to ensure events have been bound in time.
+  * Checks if webkit2png is available inside the Screenshot method and now throws an error if it doesn't.
+  * Updated readme to show the real default output directory.
+
 0.2.0 / 2013-10-06 
 ==================
 
