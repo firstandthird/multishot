@@ -79,10 +79,22 @@ if(argv.d && Presets[argv.d]) {
   }
 }
 
-console.log('Capturing screenshots. This might take a while.');
-var shot = new Screenshot(grouped, options);
+var shot = new Screenshot(grouped, options, function(err) {
+  console.log(' ');
+  console.log('Error: ' + err);
+});
 
 shot.on('complete', function(file) {
   console.log(' ');
   console.log('Done. File saved to: ' + file);
 });
+
+shot.on('err', function(err) {
+  console.log('Error: ' + err);
+});
+
+shot.on('start', function(){
+  console.log('Capturing screenshots. This might take a while.');
+});
+
+shot.start();
