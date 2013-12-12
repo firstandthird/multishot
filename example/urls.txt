@@ -1,6 +1,10 @@
 Homepage
 http://leanin.org
 http://leanin.org/about/
+http://leanin.org/contact/
+http://leanin.org/news/
+http://leanin.org/partners/
+http://leanin.org/team/
 
 News+Inspiration
 http://leanin.org/news-inspiration/

@@ -17,16 +17,30 @@
     line-height: {{{styles.bodyLineHeight}}};
 	}
 
+	.cf:before,
+	.cf:after {
+    content: " ";
+    clear: both;
+	}
+
 	.group {
+		clear: both;
 		margin: {{{styles.groupMargin}}};
 	}
 
 	.screenshot-container {
-		display: inline-block;
+		float: left;
+		margin: {{{styles.screenshotMargin}}};
 	}
 		.screenshot-container img {
 			border: {{{styles.screenshotImgBorder}}};
 		}
+
+		{{#if styles.lineWrap}}
+		.screenshot-container:nth-child({{{styles.lineWrap}}}n+2) {
+			clear: left;
+		}
+		{{/if}}
 
 	h2 {
 		font-size: {{{styles.h2FontSize}}};
@@ -54,7 +68,7 @@
 </head>	
 <body>
 	{{#each grouped}}
-	<div class="group">
+	<div class="group cf">
 	  <h2>{{@key}}</h2>
 	  {{#each this}}
 	  <div class="screenshot-container">
