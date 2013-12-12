@@ -30,13 +30,13 @@ npm install multishot -g
 Usage: multishot [opts]
 
 Options:
-  -o     Output directory                                        [default: process.cwd()]
-  -t     Temp directory. Note: This directory will be truncated. [default: "/tmp/multishot/"]
+  -o     Output directory                                               [default: "/Users/troywhiteley/Projects/multishot"]
+  -t     Temp directory. Note: This directory will be truncated.        [default: "/tmp/multishot/"]
   -u     List of urls to use.
   -f     File containing list of urls (One url per line).
-  -p     Prefix for output file.
+  -p     Prefix for output file
   -d     Device Profile. Pass with no option to see available presets.
-  -w     Sets viewport width.
+  -w     Items per row.                                                 [default: "4"]
   -h     Sets viewport height.
   -a     Sets user agent.
   --tpl  Template file.
@@ -208,12 +208,14 @@ These are the default styles:
 | bodyFontSize        | 12px               |
 | bodyLineHeight      | 17px               |
 | groupMargin         | 40px 0             |
+| screenshotMargin    | 40px 0             |
 | screenshotImgBorder | 4px solid #d35400  |
 | h2FontSize          | 24px               |
 | h2FontColor         | #2C3E50            |
 | h2FontWeight        | 700                |
 | h2Margin            | 2px 0              |
 | urlFontStyle        | italic             |
+| lineWrap            | 4                  |
 
 You can override or add new variables by passing them as properties to the `styles` option value.
 

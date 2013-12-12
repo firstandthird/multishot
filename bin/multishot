@@ -19,6 +19,8 @@ var argv = optimist
     .describe('w', 'Sets viewport width.')
     .describe('h', 'Sets viewport height.')
     .describe('a', 'Sets user agent.')
+    .describe('w', 'Items per row.')
+    .default('w', '4')
     .describe('tpl', 'Template file.')
     .argv;
 
@@ -72,6 +74,9 @@ options.output = argv.o;
 options.temp = argv.t;
 options.additional = {};
 options.prefix = argv.p;
+options.styles = {
+  lineWrap: argv.w
+};
 
 if(argv.d && Presets[argv.d]) {
   for(var pkey in Presets[argv.d]) {
