@@ -36,7 +36,7 @@ Options:
   -f     File containing list of urls (One url per line).
   -p     Prefix for output file
   -d     Device Profile. Pass with no option to see available presets.
-  -w     Items per row.                                                 [default: "4"]
+  -w     Items per row.                                                 
   -h     Sets viewport height.
   -a     Sets user agent.
   --tpl  Template file.

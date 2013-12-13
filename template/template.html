@@ -29,7 +29,11 @@
 	}
 
 	.screenshot-container {
+		{{#if styles.lineWrap}}
 		float: left;
+		{{else}}
+		display: inline-block;
+		{{/if}}
 		margin: {{{styles.screenshotMargin}}};
 	}
 		.screenshot-container img {

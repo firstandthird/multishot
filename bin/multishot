@@ -20,7 +20,6 @@ var argv = optimist
     .describe('h', 'Sets viewport height.')
     .describe('a', 'Sets user agent.')
     .describe('w', 'Items per row.')
-    .default('w', '4')
     .describe('tpl', 'Template file.')
     .argv;
 
